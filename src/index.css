@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-ivory text-indigo font-sans antialiased; }
+  h1, h2, h3, h4 { @apply font-serif text-maroon; }
+  input, select, textarea { @apply outline-none; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition duration-300 cursor-pointer; }
+  .btn-primary { @apply btn bg-maroon text-ivory border border-gold hover:bg-terracotta hover:-translate-y-0.5 hover:shadow-lg; }
+  .btn-gold { @apply btn bg-gold text-maroon-dark border border-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-lg; }
+  .btn-outline { @apply btn border border-maroon text-maroon hover:bg-maroon hover:text-ivory; }
+  .btn-danger { @apply btn border border-red-700 text-red-800 hover:bg-red-700 hover:text-white; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+  .input { @apply w-full rounded-md border border-gold/60 bg-white/90 px-3 py-2 text-sm text-indigo focus:border-maroon focus:ring-2 focus:ring-gold/50; }
+  .card { @apply rounded-xl border border-gold/70 bg-white/85 shadow-md backdrop-blur-sm transition duration-300; }
+  .card-hover { @apply hover:-translate-y-1 hover:shadow-xl hover:border-gold; }
+  .badge { @apply inline-block rounded-full bg-peacock/10 px-2.5 py-0.5 text-[11px] font-semibold text-peacock; }
+  .badge-demo { @apply inline-block rounded-full bg-terracotta/15 px-2.5 py-0.5 text-[11px] font-semibold text-terracotta; }
+  .link { @apply text-maroon underline decoration-gold underline-offset-4 hover:text-terracotta; }
+}
+
+/* Traditional woven-textile pattern (also used as the image fallback) */
+.weave {
+  background-color: #f4e7d0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(196,154,54,.22) 0 2px, transparent 2px 12px),
+    repeating-linear-gradient(-45deg, rgba(100,27,46,.14) 0 2px, transparent 2px 12px);
+}
+.weave-fallback {
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem;
+  color: #f4e7d0; font-family: 'Playfair Display', serif; font-size: .95rem;
+  background-color: #641b2e;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(196,154,54,.45) 0 2px, transparent 2px 14px),
+    repeating-linear-gradient(-45deg, rgba(196,154,54,.25) 0 2px, transparent 2px 14px);
+}
+.gold-frame { border: 2px solid #c49a36; box-shadow: inset 0 0 0 4px rgba(244,231,208,.9), inset 0 0 0 5px rgba(196,154,54,.7); }
+.border-motif { height: 10px; background-image: repeating-linear-gradient(90deg, #c49a36 0 12px, #641b2e 12px 24px, #174c3c 24px 36px); }
